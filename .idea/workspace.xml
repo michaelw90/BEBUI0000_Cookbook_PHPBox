@@ -5,7 +5,7 @@
     <ignored path="BEBUI0000_Cookbook_PHPBox.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/a.dummy" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1376931393772" ignored="false" />
-    <file path="/metadata.rb" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1376933679693" ignored="false" />
+    <file path="/metadata.rb" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1376934914532" ignored="false" />
     <file path="/default.rb" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1376933689534" ignored="false" />
     <file path="/apps.rb" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1376931415129" ignored="false" />
     <file path="/helpers.rb" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1376931403631" ignored="false" />
@@ -74,25 +74,25 @@
       <file leaf-file-name="metadata.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/metadata.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="43" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0">
+            <state line="13" column="44" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nginx_vhost.conf.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="nginx_vhost.conf.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/default/nginx_vhost.conf.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="1" selection-start="670" selection-end="670" vertical-scroll-proportion="-17.0">
+            <state line="26" column="23" selection-start="692" selection-end="692" vertical-scroll-proportion="0.5169591">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="default.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recipes/default.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="19" selection-start="141" selection-end="141" vertical-scroll-proportion="0.13507378">
+            <state line="7" column="19" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -113,9 +113,9 @@
         <option value="$PROJECT_DIR$/libraries/helpers.rb" />
         <option value="$PROJECT_DIR$/recipes/apps.rb" />
         <option value="$PROJECT_DIR$/recipes/nginx.rb" />
-        <option value="$PROJECT_DIR$/templates/default/nginx_vhost.conf.erb" />
         <option value="$PROJECT_DIR$/metadata.rb" />
         <option value="$PROJECT_DIR$/recipes/default.rb" />
+        <option value="$PROJECT_DIR$/templates/default/nginx_vhost.conf.erb" />
       </list>
     </option>
   </component>
@@ -482,21 +482,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/metadata.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="43" selection-start="451" selection-end="451" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/default/nginx_vhost.conf.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="1" selection-start="670" selection-end="670" vertical-scroll-proportion="-17.0">
+        <state line="13" column="44" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recipes/default.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="19" selection-start="141" selection-end="141" vertical-scroll-proportion="0.13507378">
+        <state line="7" column="19" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/default/nginx_vhost.conf.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="23" selection-start="692" selection-end="692" vertical-scroll-proportion="0.5169591">
           <folding />
         </state>
       </provider>
