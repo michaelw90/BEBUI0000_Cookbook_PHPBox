@@ -11,6 +11,6 @@ recipe 'cookbook_phpbox', 'PHP/Nginx server, ready for Capistrano deployment.'
   supports os
 end
 
-%w{build-essential appbox databox nginx}.each do |cb|
+%w{build-essential appbox databox nginx php5-fpm}.each do |cb|
   depends cb
 end
