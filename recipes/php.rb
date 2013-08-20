@@ -8,6 +8,6 @@
 include_recipe "php"
 include_recipe "php-fpm"
 
-php_pear 'mysql' do
+package "php5-mysql" do
   action :install
 end
