@@ -5,8 +5,7 @@
 
 include_recipe "appbox"
 include_recipe "cookbook_phpbox::nginx"
-include_recipe "php"
-include_recipe "php-fpm"
+include_recipe "cookbook_phpbox::php"
 
 if node["cookbook_phpbox"]["apps"]
   include_recipe "cookbook_phpbox::apps"
