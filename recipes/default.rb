@@ -4,6 +4,7 @@
 #
 
 include_recipe "appbox"
+include_recipe "databox"
 include_recipe "cookbook_phpbox::nginx"
 include_recipe "cookbook_phpbox::php"
 
