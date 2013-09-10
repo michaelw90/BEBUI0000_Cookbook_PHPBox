@@ -14,7 +14,7 @@
     <file path="/php.rb" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1376991706329" ignored="false" />
     <file path="$PROJECT_DIR$/../BEARC0001_Arctic_Refrigeration_Website/Berksfile" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378726064240" ignored="false" />
     <file path="/Berksfile" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378725926627" ignored="false" />
-    <file path="$PROJECT_DIR$/../BEARC0001_Arctic_Refrigeration_Website/chef.json" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378753895875" ignored="false" />
+    <file path="$PROJECT_DIR$/../BEARC0001_Arctic_Refrigeration_Website/chef.json" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378812466629" ignored="false" />
     <file path="/a.js" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378728398361" ignored="false" />
     <file path="/a.less" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378728405175" ignored="false" />
     <file path="/a.php" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378728407876" ignored="false" />
@@ -25,7 +25,7 @@
     <file path="$PROJECT_DIR$/../BEARC0001_Arctic_Refrigeration_Website/Vagrantfile" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378729469654" ignored="false" />
     <file path="$PROJECT_DIR$/../BEARC0001_Arctic_Refrigeration_Website/config/deploy.rb" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378742136215" ignored="false" />
     <file path="/deploy.rb" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378742136215" ignored="false" />
-    <file path="/chef.json" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378753873113" ignored="false" />
+    <file path="/chef.json" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378812466629" ignored="false" />
     <file path="/nginx_vhost_cakephp.conf.erb" changelist="276eb30e-f732-4a81-b193-ce3501ea58a8" time="1378754175037" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +41,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -78,6 +77,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -90,16 +90,7 @@
       <file leaf-file-name="nginx_vhost_cakephp.conf.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/default/nginx_vhost_cakephp.conf.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="27" selection-start="668" selection-end="668" vertical-scroll-proportion="-6.9615383">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="metadata.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/metadata.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="23" selection-start="280" selection-end="280" vertical-scroll-proportion="0.18398269">
+            <state line="11" column="0" selection-start="272" selection-end="272" vertical-scroll-proportion="-7.1923075">
               <folding />
             </state>
           </provider>
@@ -108,7 +99,16 @@
       <file leaf-file-name="nginx_vhost.conf.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/default/nginx_vhost.conf.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="583" selection-end="661" vertical-scroll-proportion="-2.6153846">
+            <state line="37" column="44" selection-start="1230" selection-end="1230" vertical-scroll-proportion="-15.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="metadata.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/metadata.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="23" selection-start="280" selection-end="280" vertical-scroll-proportion="0.12125535">
               <folding />
             </state>
           </provider>
@@ -170,6 +170,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -251,7 +252,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -267,8 +267,8 @@
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -366,14 +366,14 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32784638" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25933075" sideWeight="0.6712517" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26254827" sideWeight="0.6712517" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -450,9 +450,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/recipes/php.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/metadata.rb">
@@ -486,70 +484,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Berksfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recipes/php.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="10" column="0" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recipes/default.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="0.3152639">
-          <folding />
-        </state>
+        <state line="13" column="0" selection-start="266" selection-end="266" vertical-scroll-proportion="0.3152639" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recipes/nginx.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="33" selection-start="35" selection-end="35" vertical-scroll-proportion="0.02425107">
-          <folding />
-        </state>
+        <state line="1" column="33" selection-start="35" selection-end="35" vertical-scroll-proportion="0.02425107" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libraries/helpers.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="24" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="13" column="24" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recipes/apps.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="127" selection-end="127" vertical-scroll-proportion="0.19400856">
-          <folding />
-        </state>
+        <state line="8" column="0" selection-start="127" selection-end="127" vertical-scroll-proportion="0.19400856" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/attributes/default.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="95" selection-start="45" selection-end="95" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="95" selection-start="45" selection-end="95" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/default/nginx_vhost.conf.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="583" selection-end="661" vertical-scroll-proportion="-2.6153846">
+        <state line="37" column="44" selection-start="1230" selection-end="1230" vertical-scroll-proportion="-15.5">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/default/nginx_vhost_cakephp.conf.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="27" selection-start="668" selection-end="668" vertical-scroll-proportion="-6.9615383">
+        <state line="11" column="0" selection-start="272" selection-end="272" vertical-scroll-proportion="-7.1923075">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/metadata.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="23" selection-start="280" selection-end="280" vertical-scroll-proportion="0.18398269">
+        <state line="5" column="23" selection-start="280" selection-end="280" vertical-scroll-proportion="0.12125535">
           <folding />
         </state>
       </provider>

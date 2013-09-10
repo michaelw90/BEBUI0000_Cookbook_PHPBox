@@ -10,6 +10,9 @@ server {
     client_max_body_size 4G;
     charset utf-8;
 
+    root <%= @root_path %>;
+    index  index.php;
+
 <% if @ssl_key && @ssl_cert -%>
     ssl on;
     ssl_certificate     <%= @ssl_cert %>;
@@ -20,8 +23,6 @@ server {
 <% end -%>
 
     location / {
-        root <%= @root_path %>;
-        index  index.php;
         try_files $uri $uri/ /index.php?$uri&$args;
     }
 
