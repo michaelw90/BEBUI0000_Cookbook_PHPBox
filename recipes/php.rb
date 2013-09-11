@@ -11,3 +11,7 @@ include_recipe "php-fpm"
 package "php5-mysql" do
   action :install
 end
+
+service "php5-fpm" do
+  action :restart
+end
