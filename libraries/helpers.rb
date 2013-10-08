@@ -1,5 +1,21 @@
 module PHPBox
   module Helpers
+
+    def setup_apache_site(app, app_dir)
+      if app.attribute?('hostnames')
+        host_names = app['hostnames']
+      elsif app.attribute?('hostname')
+        host_names = [app['hostname']]
+      else
+        host_names = ['localhost']
+      end
+      web_app app['appname'] do
+        server_name host_names[0]
+        server_aliases host_names
+        docroot ::File.join(app_dir, 'public')
+      end
+    end
+
     def setup_nginx_site(app, app_dir)
       config = merge_nginx_config(
         node["cookbook_phpbox"]["default_config"]["nginx"],
@@ -36,5 +52,7 @@ module PHPBox
     end
 
   end
+
+
 
 end
