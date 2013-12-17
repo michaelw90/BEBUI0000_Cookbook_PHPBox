@@ -4,7 +4,14 @@
 #
 
 include_recipe "appbox"
-include_recipe "databox"
+
+if node["databox"]["databases"]["mysql"]
+  include_recipe "databox::mysql"
+end
+
+if node["databox"]["databases"]["postgresql"]
+  include_recipe "databox::postgresql"
+end
 
 if node.attribute?("cookbook_phpbox")
   if node["cookbook_phpbox"].attribute?("webserver")
