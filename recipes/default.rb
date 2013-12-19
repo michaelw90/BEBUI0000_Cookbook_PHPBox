@@ -6,12 +6,14 @@
 include_recipe "appbox"
 
 if node.attribute?("databox")
-  if node["databox"]["databases"]["mysql"]
-    include_recipe "databox::mysql"
-  end
+  if node["databox"].attribute?("databases")
+    if node["databox"]["databases"]["mysql"]
+      include_recipe "databox::mysql"
+    end
 
-  if node["databox"]["databases"]["postgresql"]
-    include_recipe "databox::postgresql"
+    if node["databox"]["databases"]["postgresql"]
+      include_recipe "databox::postgresql"
+    end
   end
 end
 
