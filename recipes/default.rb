@@ -6,7 +6,7 @@
 include_recipe "appbox"
 
 if node.attribute?("databox")
-  if node["databox"].attribute?("databases")
+  if node["databox"].attribute?("databases") and node["databox"]["databases"]
     if node["databox"]["databases"]["mysql"]
       include_recipe "databox::mysql"
     end
