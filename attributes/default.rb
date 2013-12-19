@@ -5,7 +5,7 @@ default["cookbook_phpbox"]["default_config"]["nginx"]["listen_port"] = "80"
 
 default["cookbook_phpbox"]["apps"]= []
 
-default["databox"]["databases"] = []
+default["databox"]["databases"] = {}
 
 set['nginx']['init_style'] = "init"
 
