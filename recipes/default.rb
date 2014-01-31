@@ -5,6 +5,8 @@
 
 include_recipe "appbox"
 
+include_recipe "cookbook_phpbox::users"
+
 if node.attribute?("databox")
   if node["databox"].attribute?("databases")
     if node["databox"]["databases"]["mysql"]
