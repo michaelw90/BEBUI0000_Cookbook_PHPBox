@@ -33,6 +33,7 @@ module PHPBox
           :log_dir     => node["nginx"]["log_dir"],
           :appname     => app["appname"],
           :hostname    => app["hostname"],
+          :upstream    => app["upstream_name"] ? app["upstream_name"] : 'backend',
           :listen_port => config["listen_port"],
           :ssl_key     => config["ssl_key"],
           :ssl_cert    => config["ssl_cert"]
