@@ -1,0 +1,70 @@
+server {
+
+    server_name <%= @hostname %>;
+    listen <%= @listen_port %>;
+
+    access_log <%= @log_dir %>/<%= @appname %>-access.log combined;
+    error_log  <%= @log_dir %>/<%= @appname %>-error.log;
+    rewrite_log on;
+
+    client_max_body_size 4G;
+    charset utf-8;
+
+    root <%= @root_path %>;
+    index  index.php;
+
+<% if @ssl_key && @ssl_cert -%>
+    ssl on;
+    ssl_certificate     <%= @ssl_cert %>;
+    ssl_certificate_key <%= @ssl_key %>;
+    ssl_protocols SSLv3 TLSv1;
+    ssl_ciphers ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!EDH:!AESGCM;
+    ssl_prefer_server_ciphers on;
+<% end -%>
+
+    location = /favicon.ico {
+        log_not_found off;
+        access_log off;
+    }
+
+    location = /robots.txt {
+        allow all;
+        log_not_found off;
+        access_log off;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(.*)$;
+        fastcgi_pass   backend;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  <%= @root_path %>$fastcgi_script_name;
+        include fastcgi_params;
+        fastcgi_param  QUERY_STRING     $query_string;
+        fastcgi_param  REQUEST_METHOD   $request_method;
+        fastcgi_param  CONTENT_TYPE     $content_type;
+        fastcgi_param  CONTENT_LENGTH   $content_length;
+        fastcgi_intercept_errors        on;
+        fastcgi_ignore_client_abort     off;
+        fastcgi_connect_timeout 60;
+        fastcgi_send_timeout 180;
+        fastcgi_read_timeout 180;
+        fastcgi_buffer_size 128k;
+        fastcgi_buffers 4 256k;
+        fastcgi_busy_buffers_size 256k;
+        fastcgi_temp_file_write_size 256k;
+    }
+
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+            expires max;
+            log_not_found off;
+    }
+
+}
+upstream backend {
+    server 127.0.0.1:9001;
+}
