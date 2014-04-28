@@ -22,6 +22,10 @@ server {
     location / {
         root <%= @root_path %>;
         index  index.php index.html index.htm;
+<% if @htpasswd_path -%>
+        auth_basic "Restricted";
+        auth_basic_user_file <%= @htpasswd_path %>;
+<% end -%>
     }
 
     location ~ .php$ {
