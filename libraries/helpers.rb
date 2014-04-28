@@ -25,7 +25,7 @@ module PHPBox
       htpasswd_username = node['cookbook_phpbox']['htpasswd']['username']
       htpasswd_password = node['cookbook_phpbox']['htpasswd']['password']
       htpasswd_path = node['cookbook_phpbox']['htpasswd']['path']
-      if htpasswd_username != '' || htpasswd_password != ''
+      if htpasswd_username == '' || htpasswd_password == ''
         htpasswd_path = ''
       end
 
