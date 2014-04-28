@@ -4,6 +4,10 @@ default["cookbook_phpbox"]["default_config"]["nginx"]["template_name"] = "nginx_
 default["cookbook_phpbox"]["default_config"]["nginx"]["template_cookbook"] = "cookbook_phpbox"
 default["cookbook_phpbox"]["default_config"]["nginx"]["listen_port"] = "80"
 
+default['cookbook_phpbox']['htpasswd']['username'] = ''
+default['cookbook_phpbox']['htpasswd']['password'] = ''
+default['cookbook_phpbox']['htpasswd']['path'] = ''
+
 default["cookbook_phpbox"]["apps"]= []
 
 default["databox"]["databases"] = {}
