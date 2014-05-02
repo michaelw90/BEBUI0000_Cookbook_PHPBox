@@ -14,3 +14,5 @@ default["databox"]["databases"] = {}
 
 set['nginx']['init_style'] = "init"
 
+default['build-essential']['compile_time'] = true
+
