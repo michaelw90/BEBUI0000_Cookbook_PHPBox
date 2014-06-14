@@ -29,4 +29,10 @@ Array(node["cookbook_phpbox"]["php_packages"]).each_with_index do |package_name,
   end
 end
 
+Array(node["cookbook_phpbox"]["php_pears"]).each_with_index do |pear_name, index|
+  php_pear pear_name do
+    action :install
+  end
+end
+
 include_recipe "php-fpm"
