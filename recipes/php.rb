@@ -12,27 +12,15 @@ node.set['php-fpm']['pools'] = [
   }
 ]
 
-if node['php']['install_method'] == 'package'
+include_recipe "php"
 
-  include_recipe "php"
-
-  package "php5-mysql" do
-    action :install
-  end
-
-  package "php5-sqlite" do
-    action :install
-  end
-
+package "php5-mysql" do
+  action :install
 end
 
-if node['php']['install_method'] == 'source'
-
-  include_recipe "php::source"
-  include_recipe "php::ini"
-
+package "php5-sqlite" do
+  action :install
 end
-
 
 Array(node["cookbook_phpbox"]["php_packages"]).each_with_index do |package_name, index|
   package package_name do
