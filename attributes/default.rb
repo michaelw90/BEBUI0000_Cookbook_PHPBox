@@ -1,3 +1,4 @@
+default["cookbook_phpbox"]["php"] = true
 default["cookbook_phpbox"]["webserver"] = "nginx"
 default["cookbook_phpbox"]["php_packages"] = []
 default["cookbook_phpbox"]["php_pears"] = []
