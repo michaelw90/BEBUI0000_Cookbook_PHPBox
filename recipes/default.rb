@@ -28,7 +28,7 @@ if node.attribute?("cookbook_phpbox")
   end
 end
 
-if node["cookbook_phpbox"]["php"]
+if node["cookbook_phpbox"]["php"] == true
   include_recipe "cookbook_phpbox::php"
 end
 
