@@ -12,9 +12,9 @@ node.set['php-fpm']['pools'] = [
   }
 ]
 
-include_recipe "php"
-
 if node['php']['install_method'] == 'package'
+
+  include_recipe "php"
 
   package "php5-mysql" do
     action :install
@@ -23,6 +23,13 @@ if node['php']['install_method'] == 'package'
   package "php5-sqlite" do
     action :install
   end
+
+end
+
+if node['php']['install_method'] == 'source'
+
+  include_recipe "php::source"
+  include_recipe "php::ini"
 
 end
 
