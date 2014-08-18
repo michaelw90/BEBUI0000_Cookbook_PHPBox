@@ -4,7 +4,7 @@ maintainer_email 'fred.thompson@buildempire.co.uk'
 license          'Apache 2.0'
 description      'PHP and Nginx/Apache server, ready for Capistrano deployment.'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.3.6'
+version          '0.3.7'
 
 recipe 'cookbook_phpbox', 'PHP and Nginx/Apache server, ready for Capistrano deployment.'
 
@@ -12,6 +12,6 @@ recipe 'cookbook_phpbox', 'PHP and Nginx/Apache server, ready for Capistrano dep
   supports os
 end
 
-%w{build-essential appbox databox apache2 nginx php php-fpm htpasswd}.each do |cb|
+%w{apache2 appbox build-essential databox htpasswd newrelic nginx php php-fpm rackspace_cloudbackup rackspace_cloudmonitoring}.each do |cb|
   depends cb
 end
