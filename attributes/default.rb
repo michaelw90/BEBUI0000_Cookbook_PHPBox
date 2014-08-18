@@ -10,6 +10,13 @@ default['cookbook_phpbox']['htpasswd']['username'] = ''
 default['cookbook_phpbox']['htpasswd']['password'] = ''
 default['cookbook_phpbox']['htpasswd']['path'] = ''
 
+default['cookbook_phpbox']['newrelic']['license_key'] = ''
+
+default['cookbook_phpbox']['rackspace']['username'] = ''
+default['cookbook_phpbox']['rackspace']['api_key'] = ''
+default['cookbook_phpbox']['rackspace']['monitoring'] = true
+default['cookbook_phpbox']['rackspace']['backup'] = true
+
 default["cookbook_phpbox"]["apps"]= []
 
 default["databox"]["databases"] = {}

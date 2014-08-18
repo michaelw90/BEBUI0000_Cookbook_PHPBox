@@ -37,3 +37,5 @@ if node["cookbook_phpbox"]["apps"]
 end
 
 include_recipe "cookbook_phpbox::htpasswd"
+include_recipe 'cookbook_phpbox::newrelic'
+include_recipe 'cookbook_phpbox::rackspace'
