@@ -73,7 +73,7 @@ if node['cookbook_phpbox']['rackspace']
         [
           { location: '/home' }
         ]
-      include_recipe 'rackspace-cloud-backup::cloud'
+      include_recipe 'rackspace_cloudbackup'
 
     end
 
