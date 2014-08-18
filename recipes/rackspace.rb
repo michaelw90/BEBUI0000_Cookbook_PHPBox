@@ -18,7 +18,7 @@ if node['cookbook_phpbox']['rackspace']
     if rackspace_monitoring == true
 
       #gem_package "fog" do
-        #action :install
+      #action :install
       #end
 
       #require 'fog'
@@ -34,8 +34,13 @@ if node['cookbook_phpbox']['rackspace']
           'cpu' =>  { 'type' => 'agent.cpu', },
           'load' => { 'type'  => 'agent.load_average',
                       'alarm' => {
-                          'CRITICAL' => { 'conditional' => "metric['5m'] > #{cpu_critical_threshold}", },
-                          'WARNING'  => { 'conditional' => "metric['5m'] > #{cpu_warning_threshold}", },
+                          'notification_plan_id' => 'npTechnicalContactsEmail',
+                          'CRITICAL' => {
+                              'conditional' => "metric['5m'] > #{cpu_critical_threshold}",
+                          },
+                          'WARNING'  => {
+                              'conditional' => "metric['5m'] > #{cpu_warning_threshold}",
+                          },
                       },
           },
 
@@ -70,9 +75,9 @@ if node['cookbook_phpbox']['rackspace']
 
       node.set['rackspace_cloudbackup']['backups_defaults']['cloud_notify_email'] = 'fred.thompson@buildempire.co.uk'
       node.set['rackspace_cloudbackup']['backups'] =
-        [
-          { location: '/home' }
-        ]
+          [
+              { location: '/home' }
+      ]
       include_recipe 'rackspace_cloudbackup'
 
     end

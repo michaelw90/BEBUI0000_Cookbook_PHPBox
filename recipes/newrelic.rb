@@ -6,7 +6,14 @@
 if node['cookbook_phpbox']['newrelic']
   newrelic_licence_key = node['cookbook_phpbox']['newrelic']['license_key']
   if newrelic_licence_key
+
+    Chef::Log.info %(Set newrelic license to node['cookbook_phpbox']['newrelic']['license_key'])
+    Chef::Log.info newrelic_licence_key
+
     node.set['newrelic']['license'] = newrelic_licence_key
+    node.set['newrelic']['server_monitoring']['license'] = newrelic_licence_key
+    node.set['newrelic']['application_monitoring']['license'] = newrelic_licence_key
+    node.set['newrelic']['plugin_monitoring']['license'] = newrelic_licence_key
     node.set['newrelic']['install_dir'] = '/opt/newrelic'
     node.set['newrelic']['php-agent']['web_server']['service_name'] = 'nginx'
     include_recipe 'newrelic::repository'
