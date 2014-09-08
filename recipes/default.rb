@@ -18,6 +18,8 @@ if node.attribute?("databox")
   end
 end
 
+include_recipe "cookbook_phpbox::mysql"
+
 if node.attribute?("cookbook_phpbox")
   if node["cookbook_phpbox"].attribute?("webserver")
     if node["cookbook_phpbox"]["webserver"] == 'apache' or node["cookbook_phpbox"]["webserver"] == 'apache2'

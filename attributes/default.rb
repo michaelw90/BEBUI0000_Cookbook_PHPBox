@@ -10,6 +10,8 @@ default['cookbook_phpbox']['htpasswd']['username'] = ''
 default['cookbook_phpbox']['htpasswd']['password'] = ''
 default['cookbook_phpbox']['htpasswd']['path'] = ''
 
+default['cookbook_phpbox']['mysql']['max_allowed_packet'] = '128M'
+
 default['cookbook_phpbox']['newrelic']['license_key'] = ''
 
 default['cookbook_phpbox']['rackspace']['username'] = ''
