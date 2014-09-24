@@ -17,4 +17,9 @@ if node['cookbook_phpbox']['smtp']['username'] && node['cookbook_phpbox']['smtp'
 
   include_recipe "ssmtp"
 
+  file "/etc/ssmtp/ssmtp.conf" do
+    mode '0644'
+    action :touch
+  end
+
 end
