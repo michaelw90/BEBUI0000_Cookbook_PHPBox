@@ -5,7 +5,7 @@
 
 if node['cookbook_phpbox']['newrelic']
   newrelic_licence_key = node['cookbook_phpbox']['newrelic']['license_key']
-  if newrelic_licence_key
+  if newrelic_licence_key && newrelic_licence_key != ''
 
     Chef::Log.info %(Set newrelic license to node['cookbook_phpbox']['newrelic']['license_key'])
     Chef::Log.info newrelic_licence_key
