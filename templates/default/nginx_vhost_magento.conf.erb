@@ -1,0 +1,94 @@
+server {
+
+    server_name <%= @hostname %>;
+    listen <%= @listen_port %>;
+
+    access_log <%= @log_dir %>/<%= @appname %>-access.log combined;
+    error_log  <%= @log_dir %>/<%= @appname %>-error.log;
+    rewrite_log on;
+
+    client_max_body_size 4G;
+    charset utf-8;
+
+    root <%= @root_path %>;
+    index  index.php;
+
+<% if @ssl_key && @ssl_cert -%>
+    ssl on;
+    ssl_certificate     <%= @ssl_cert %>;
+    ssl_certificate_key <%= @ssl_key %>;
+    ssl_protocols SSLv3 TLSv1;
+    ssl_ciphers ECDHE-RSA-AES256-SHA384:AES256-SHA256:RC4:HIGH:!MD5:!aNULL:!EDH:!AESGCM;
+    ssl_prefer_server_ciphers on;
+<% end -%>
+
+    location / {
+        index index.html index.php; ## Allow a static html file to be shown first
+        try_files $uri $uri/ @handler; ## If missing pass the URI to Magento's front handler
+        expires 30d; ## Assume all files are cachable
+<% if @htpasswd_path != "" -%>
+        auth_basic "Restricted";
+        auth_basic_user_file <%= @htpasswd_path %>;
+<% end -%>
+    }
+
+    ## These locations would be hidden by .htaccess normally
+    location ^~ /app/                { deny all; }
+    location ^~ /includes/           { deny all; }
+    location ^~ /lib/                { deny all; }
+    location ^~ /media/downloadable/ { deny all; }
+    location ^~ /pkginfo/            { deny all; }
+    location ^~ /report/config.xml   { deny all; }
+    location ^~ /var/                { deny all; }
+
+    location /var/export/ { ## Allow admins only to view export folder
+<% if @htpasswd_path != "" -%>
+        auth_basic "Restricted";
+        auth_basic_user_file <%= @htpasswd_path %>;
+<% end -%>
+        autoindex            on;
+    }
+
+    location  /. { ## Disable .htaccess and other hidden files
+        return 404;
+    }
+
+    location @handler { ## Magento uses a common front handler
+        rewrite / /index.php;
+    }
+
+    location ~ .php/ { ## Forward paths like /js/index.php/x.js to relevant handler
+        rewrite ^(.*.php)/ $1 last;
+    }
+
+    location ~ .php$ { ## Execute PHP scripts
+        if (!-e $request_filename) { rewrite / /index.php last; } ## Catch 404s that try_files miss
+        expires        off; ## Do not cache dynamic content
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(.*)$;
+        fastcgi_pass   <%= @upstream %>;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  <%= @root_path %>$fastcgi_script_name;
+        include fastcgi_params;
+        fastcgi_param  HTTPS $fastcgi_https;
+        fastcgi_param  QUERY_STRING     $query_string;
+        fastcgi_param  REQUEST_METHOD   $request_method;
+        fastcgi_param  CONTENT_TYPE     $content_type;
+        fastcgi_param  CONTENT_LENGTH   $content_length;
+        fastcgi_param  MAGE_RUN_CODE default; ## Store code is defined in administration > Configuration > Manage Stores
+        fastcgi_param  MAGE_RUN_TYPE store;
+        fastcgi_intercept_errors        on;
+        fastcgi_ignore_client_abort     off;
+        fastcgi_connect_timeout 60;
+        fastcgi_send_timeout 180;
+        fastcgi_read_timeout 180;
+        fastcgi_buffer_size 128k;
+        fastcgi_buffers 4 256k;
+        fastcgi_busy_buffers_size 256k;
+        fastcgi_temp_file_write_size 256k;
+    }
+
+}
+upstream <%= @upstream %> {
+    server 127.0.0.1:9001;
+}
