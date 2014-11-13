@@ -35,4 +35,9 @@ Array(node["cookbook_phpbox"]["php_pears"]).each_with_index do |pear_name, index
   end
 end
 
+Array(node["cookbook_phpbox"]["php_php5enmods"]).each_with_index do |mod_name, index|
+  execute("php5enmod #{mod_name}") do
+  end
+end
+
 include_recipe "php-fpm"
