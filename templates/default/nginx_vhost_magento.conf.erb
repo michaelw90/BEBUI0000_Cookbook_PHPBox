@@ -74,7 +74,7 @@ server {
         fastcgi_param  REQUEST_METHOD   $request_method;
         fastcgi_param  CONTENT_TYPE     $content_type;
         fastcgi_param  CONTENT_LENGTH   $content_length;
-        fastcgi_param  MAGE_RUN_CODE default; ## Store code is defined in administration > Configuration > Manage Stores
+        fastcgi_param  MAGE_RUN_CODE breville; ## Store code is defined in administration > Configuration > Manage Stores - This is hardcoded for now for speed for breville! TODO: FIX!
         fastcgi_param  MAGE_RUN_TYPE store;
         fastcgi_intercept_errors        on;
         fastcgi_ignore_client_abort     off;
