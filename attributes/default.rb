@@ -20,6 +20,13 @@ default['cookbook_phpbox']['smtp']['credential_method'] = 'plain'
 
 default['cookbook_phpbox']['mysql']['max_allowed_packet'] = '128M'
 
+default['cookbook_phpbox']['mysql-cron-backup']['active'] = false
+default['cookbook_phpbox']['mysql-cron-backup']['username'] = ''
+default['cookbook_phpbox']['mysql-cron-backup']['password'] = ''
+default['cookbook_phpbox']['mysql-cron-backup']['host'] = ''
+default['cookbook_phpbox']['mysql-cron-backup']['hour'] = 3
+default['cookbook_phpbox']['mysql-cron-backup']['minute'] = 0
+
 default['cookbook_phpbox']['newrelic']['license_key'] = ''
 
 default['cookbook_phpbox']['rackspace']['username'] = ''
@@ -28,8 +35,6 @@ default['cookbook_phpbox']['rackspace']['monitoring'] = true
 default['cookbook_phpbox']['rackspace']['backup'] = true
 
 default["cookbook_phpbox"]["apps"]= []
-
-default["databox"]["databases"] = {}
 
 set['nginx']['init_style'] = "init"
 

@@ -7,14 +7,14 @@ include_recipe "appbox"
 
 include_recipe "cookbook_phpbox::users"
 
-if node.attribute?("databox")
-  if node["databox"].attribute?("databases")
-    if node["databox"]["databases"]["mysql"]
-      include_recipe "databox::mysql"
+if node.attribute?("cookbook_databox")
+  if node["cookbook_databox"].attribute?("databases")
+    if node["cookbook_databox"]["databases"]["mysql"]
+      include_recipe "cookbook_databox::mysql"
       include_recipe "cookbook_phpbox::mysql"
     end
-    if node["databox"]["databases"]["postgresql"]
-      include_recipe "databox::postgresql"
+    if node["cookbook_databox"]["databases"]["postgresql"]
+      include_recipe "cookbook_databox::postgresql"
     end
   end
 end
@@ -37,6 +37,10 @@ end
 
 if node["cookbook_phpbox"]["apps"]
   include_recipe "cookbook_phpbox::apps"
+end
+
+if ['cookbook_phpbox']['mysql-cron-backup']['active']
+  include_recipe "cookbook_phpbox::cron"
 end
 
 include_recipe "cookbook_phpbox::htpasswd"
