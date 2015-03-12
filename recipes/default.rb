@@ -39,7 +39,7 @@ if node["cookbook_phpbox"]["apps"]
   include_recipe "cookbook_phpbox::apps"
 end
 
-if ['cookbook_phpbox']['mysql-cron-backup']['active']
+if node['cookbook_phpbox']['mysql-cron-backup']['active']
   include_recipe "cookbook_phpbox::cron"
 end
 
