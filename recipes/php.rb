@@ -5,13 +5,12 @@
 # Install php
 #
 
-node.set['php-fpm']['pools'] = [
-  {
-    :name => "www",
+node.set['php-fpm']['pools'] = {
+  "www" => {
     :listen => "127.0.0.1:9001",
     :php_options => { 'php_admin_value[sendmail_path]' => '/usr/sbin/ssmtp -t' }
   }
-]
+}
 
 include_recipe "php"
 
