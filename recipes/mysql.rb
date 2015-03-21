@@ -2,12 +2,13 @@
 # Cookbook Name:: cookbook_phpbox
 # Recipe:: mysql
 
-template '/etc/mysql/conf.d/mysite.cnf' do
-  owner 'mysql'
-  owner 'mysql'
+# Setup the configuration file
+mysql_config 'default' do
+  cookbook 'cookbook_phpbox'
   source 'mysite.cnf.erb'
   variables(
-      :max_allowed_packet => node['cookbook_phpbox']['mysql']['max_allowed_packet']
+    :max_allowed_packet => node['cookbook_phpbox']['mysql']['max_allowed_packet']
   )
   notifies :restart, 'mysql_service[default]'
+  action :create
 end
