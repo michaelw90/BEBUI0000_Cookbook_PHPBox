@@ -11,7 +11,7 @@ server {
     charset utf-8;
 
     root <%= @root_path %>;
-    index  index.php;
+    index  index.php index.html;
 
 <% if @ssl_key && @ssl_cert -%>
     ssl on;
@@ -40,6 +40,14 @@ server {
         auth_basic_user_file <%= @htpasswd_path %>;
 <% end -%>
     }
+
+<% if @variables['multisite'] -%>
+    if (!-e $request_filename) {
+           rewrite /wp-admin$ $scheme://$host$uri/ permanent;
+           rewrite ^(/[^/]+)?(/wp-.*) $2 last;
+           rewrite ^(/[^/]+)?(/.*\.php) $2 last;
+    }
+<% end -%>
 
     location ~ \.php$ {
         try_files $uri =404;
