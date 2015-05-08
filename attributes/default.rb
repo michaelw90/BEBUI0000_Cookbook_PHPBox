@@ -1,12 +1,12 @@
-default["cookbook_phpbox"]["php"] = true
-default["cookbook_phpbox"]["webserver"] = "nginx"
-default["cookbook_phpbox"]["php_packages"] = []
-default["cookbook_phpbox"]["php_pears"] = []
-default["cookbook_phpbox"]["php_php5enmods"] = []
-default["cookbook_phpbox"]["default_config"]["nginx"]["template_name"] = "nginx_vhost.conf.erb"
-default["cookbook_phpbox"]["default_config"]["nginx"]["template_cookbook"] = "cookbook_phpbox"
-default["cookbook_phpbox"]["default_config"]["nginx"]["listen_port"] = "80"
-default["cookbook_phpbox"]["default_config"]["nginx"]["variables"] = {}
+default['cookbook_phpbox']['php'] = true
+default['cookbook_phpbox']['webserver'] = 'nginx'
+default['cookbook_phpbox']['php_packages'] = []
+default['cookbook_phpbox']['php_pears'] = []
+default['cookbook_phpbox']['php_php5enmods'] = []
+default['cookbook_phpbox']['default_config']['nginx']['template_name'] = 'nginx_vhost.conf.erb'
+default['cookbook_phpbox']['default_config']['nginx']['template_cookbook'] = 'cookbook_phpbox'
+default['cookbook_phpbox']['default_config']['nginx']['listen_port'] = '80'
+default['cookbook_phpbox']['default_config']['nginx']['variables'] = {}
 
 default['cookbook_phpbox']['htpasswd']['username'] = ''
 default['cookbook_phpbox']['htpasswd']['password'] = ''
@@ -34,9 +34,9 @@ default['cookbook_phpbox']['rackspace']['api_key'] = ''
 default['cookbook_phpbox']['rackspace']['monitoring'] = true
 default['cookbook_phpbox']['rackspace']['backup'] = true
 
-default["cookbook_phpbox"]["apps"]= []
+default['cookbook_phpbox']['apps']= []
 
-set['nginx']['init_style'] = "init"
+set['nginx']['init_style'] = 'init'
 
 default['build-essential']['compile_time'] = true
 
