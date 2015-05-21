@@ -6,6 +6,7 @@
 include_recipe "appbox"
 
 include_recipe "cookbook_phpbox::users"
+include_recipe "cookbook_phpbox::symlinks"
 
 if node.attribute?("cookbook_databox")
   if node["cookbook_databox"].attribute?("databases")

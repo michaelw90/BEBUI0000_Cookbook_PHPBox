@@ -29,6 +29,8 @@ default['cookbook_phpbox']['mysql-cron-backup']['minute'] = 0
 
 default['cookbook_phpbox']['newrelic']['license_key'] = ''
 
+default['cookbook_phpbox']['symlinks'] = []
+
 default['cookbook_phpbox']['rackspace']['username'] = ''
 default['cookbook_phpbox']['rackspace']['api_key'] = ''
 default['cookbook_phpbox']['rackspace']['monitoring'] = true
