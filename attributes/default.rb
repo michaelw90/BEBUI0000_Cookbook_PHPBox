@@ -7,6 +7,14 @@ default['cookbook_phpbox']['default_config']['nginx']['template_name'] = 'nginx_
 default['cookbook_phpbox']['default_config']['nginx']['template_cookbook'] = 'cookbook_phpbox'
 default['cookbook_phpbox']['default_config']['nginx']['listen_port'] = '80'
 default['cookbook_phpbox']['default_config']['nginx']['variables'] = {}
+default['cookbook_phpbox']['default_config']['php-fpm']['pools'] = {
+  "www" => {
+    :listen => '127.0.0.1:9001',
+    :php_options => {
+      'php_admin_value[sendmail_path]' => '/usr/sbin/ssmtp -t'
+    }
+  }
+}
 
 default['cookbook_phpbox']['htpasswd']['username'] = ''
 default['cookbook_phpbox']['htpasswd']['password'] = ''
