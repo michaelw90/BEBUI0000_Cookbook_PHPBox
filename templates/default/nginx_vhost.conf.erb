@@ -30,7 +30,7 @@ server {
 
     location ~ .php$ {
         fastcgi_split_path_info ^(.+\.php)(.*)$;
-        fastcgi_pass   backend;
+        fastcgi_pass   <%= @upstream %>;
         fastcgi_index  index.php;
         fastcgi_param  SCRIPT_FILENAME  <%= @root_path %>$fastcgi_script_name;
         include fastcgi_params;
@@ -70,6 +70,6 @@ server {
     }
 
 }
-upstream backend {
+upstream <%= @upstream %> {
     server 127.0.0.1:9001;
 }
