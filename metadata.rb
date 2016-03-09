@@ -12,6 +12,6 @@ recipe 'cookbook_phpbox', 'PHP and Nginx/Apache server, ready for Capistrano dep
   supports os
 end
 
-%w{apache2 appbox build-essential cookbook_databox htpasswd newrelic nginx php php-fpm rackspace_cloudbackup rackspace_cloudmonitoring ssmtp}.each do |cb|
+%w{apache2 appbox build-essential cookbook_databox htpasswd newrelic nginx php php-fpm ssmtp}.each do |cb|
   depends cb
 end
