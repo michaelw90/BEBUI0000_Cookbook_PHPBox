@@ -45,5 +45,3 @@ if node['cookbook_phpbox']['mysql-cron-backup']['active']
 end
 
 include_recipe "cookbook_phpbox::htpasswd"
-include_recipe 'cookbook_phpbox::newrelic'
-include_recipe 'cookbook_phpbox::rackspace'
