@@ -44,6 +44,7 @@ module PHPBox
           :listen_port    => config["listen_port"],
           :ssl_key        => config["ssl_key"],
           :ssl_cert       => config["ssl_cert"],
+          :ssl_dhparam    => config["ssl_dhparam"],
           :htpasswd_path  => htpasswd_path,
           :variables      => config["variables"]
         )
