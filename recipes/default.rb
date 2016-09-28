@@ -3,8 +3,6 @@
 # Recipe:: default
 #
 
-include_recipe "cookbook_appbox"
-
 include_recipe "cookbook_phpbox::users"
 include_recipe "cookbook_phpbox::symlinks"
 
